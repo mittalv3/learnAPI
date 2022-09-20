@@ -41,21 +41,26 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  id:
-                    type: string
-                    example: 1234abcd
-                  username: 
-                    type: string
-                    example: vikasm
-                  score:
-                    type: integer
-                    example: 1234
-                  action:
-                    type: boolean
-                    example: true
+                $ref: '#/components/schemas/FullUser'
+
         default:
           description: Default error sample response
       tags:
        - attempts
+components:
+  schemas:
+    FullUser:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 1234abcd
+        username: 
+          type: string
+          example: vikasm
+        score:
+          type: integer
+          example: 1234
+        action:
+          type: boolean
+          example: true

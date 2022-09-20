@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: My API
+  version: '1.0'
+  description: Learning api
+  termsOfService: https://www.example.com/
+  contact:
+    email: mittalv3@gmail.com
+    name: Vikas Mittal
+    url: https://www.example.com/contacts
+  license:
+    name: My License
+    url: https://www.example.com/license

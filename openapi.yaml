@@ -86,18 +86,10 @@ components:
           type: boolean
           example: true
     FullUser:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 1234abcd
-        username:
-          type: string
-          example: vikasm
-        score:
-          type: integer
-          example: 1234
-        active:
-          type: boolean
-          example: true
-    
+      allOf:
+        - $ref: '#/components/schemas/UserPostBody'
+        - type: object
+          properties:
+            id:
+              type: string
+              example: 1234abcd

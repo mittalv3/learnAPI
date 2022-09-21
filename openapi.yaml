@@ -12,9 +12,13 @@ info:
     name: My License
     url: https://www.example.com/license
 servers:
+  - url: http://localhost:3000
+    variables: {}
+    description: My local Fake Server
   - url: https://my-json-server.typicode.com/bearc0025/api/
     variables: {}
     description: My fake github server
+
 paths:
   /users:
     summary: users path level operations
@@ -27,7 +31,7 @@ paths:
         default:
           description: Default error sample response
       tags:
-       - users
+        - users
   /attempts:
     summary: attempts path level operations
     description: returns attempts from server, create a attempt, update or delete it.
@@ -42,11 +46,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FullUser'
-
         default:
           description: Default error sample response
       tags:
-       - attempts
+        - attempts
 components:
   schemas:
     FullUser:
@@ -55,7 +58,7 @@ components:
         id:
           type: string
           example: 1234abcd
-        username: 
+        username:
           type: string
           example: vikasm
         score:

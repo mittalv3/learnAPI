@@ -97,6 +97,28 @@ paths:
           description: Default error sample response
       tags:
         - users
+    delete:
+      summary: Delete a User
+      description: delete user from the server
+      operationId: deleteUser
+      responses:
+        default:
+          description: Default error sample response
+      tags:
+        - users
+    patch:
+      summary: update user
+      description: update user
+      operationId: updateUser
+      requestBody:
+        $ref: '#/components/requestBodies/UserPostBody'
+      responses:
+        '200':
+          $ref: '#/components/responses/UserRespBody'
+        default:
+          description: Default error sample response
+      tags:
+        - users
 components:
   responses:
     UserRespBody:

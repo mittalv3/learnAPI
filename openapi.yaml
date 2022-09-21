@@ -18,7 +18,6 @@ servers:
   - url: https://my-json-server.typicode.com/bearc0025/api/
     variables: {}
     description: My fake github server
-
 paths:
   /users:
     summary: users path level operations
@@ -28,6 +27,38 @@ paths:
       description: return users
       operationId: fetchUsers
       responses:
+        default:
+          description: Default error sample response
+      tags:
+        - users
+    post:
+      summary: Add a new user
+      description: Stores user on server
+      operationId: createUser
+      requestBody:
+        description: new user
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: vikasm
+                score:
+                  type: integer
+                  example: 1234
+                active:
+                  type: boolean
+                  example: true
+      responses:
+        '201':
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FullUser'
         default:
           description: Default error sample response
       tags:
@@ -64,6 +95,6 @@ components:
         score:
           type: integer
           example: 1234
-        action:
+        active:
           type: boolean
           example: true
